@@ -1,7 +1,7 @@
 eloqua-java-sdk
 ===============
 
-A software development kit for building on Eloqua, initially supporting clients for Eloqua's Bulk API.
+A software development kit initially supporting clients for Eloqua's Bulk API.
 
 ## Usage
 
