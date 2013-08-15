@@ -10,10 +10,18 @@ public class BulkClient extends BaseClient {
 	}
 	
 	public ContactFieldClient ContactFieldClient() {
-		return new ContactFieldClient(this);
-	}
+		if (_contactFieldClient != null) {
+			_contactFieldClient = new ContactFieldClient(this);
+		}
+		return _contactFieldClient;
+	}	
+	private ContactFieldClient _contactFieldClient;
 
 	public ContactFilterClient ContactFilterClient() {
-		return new ContactFilterClient(this);
-	}
+		if (_contactFilterClient != null) {
+			_contactFilterClient = new ContactFilterClient(this);
+		}
+		return _contactFilterClient;
+	}	
+	private ContactFilterClient _contactFilterClient;
 }
