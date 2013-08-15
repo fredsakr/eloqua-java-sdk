@@ -6,7 +6,7 @@ A software development kit to help developers extend the Eloqua platform. Initia
 ## Usage
 
 ### Create Client
-	BulkClient client = new BulkClient("site", "user", "password", "https://secure.eloqua.com/API/Bulk/1.0");
+	BulkClient client = new BulkClient("site", "user", "password", "baseUrl");
 
 ### GET (list)
 	SearchResponse<Field> fields = client.ContactFieldClient().Search("*", 1, count);	
