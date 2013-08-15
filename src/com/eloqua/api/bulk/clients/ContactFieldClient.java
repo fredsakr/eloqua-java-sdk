@@ -15,20 +15,13 @@ public class ContactFieldClient {
 		_client = client;
 	}
 	
-	public ContactFieldSearchResponse Search(String searchTerm, int page, int pageSize)
+	public SearchResponse<Field> Search(String searchTerm, int page, int pageSize)
 	{
-		ContactFieldSearchResponse fields = null;
-		try
-		{			
-			Response response = _client.get("/contact/fields?search=" + searchTerm + "&page=" + page + "&pageSize=" + pageSize );
-			
-			Gson gson = new Gson();		
-			fields = gson.fromJson(response.body, ContactFieldSearchResponse.class);		
-		}		
-		catch (Exception e)		
-		{		
-			e.printStackTrace();	
-		}		
+		Response response = _client.get("/contact/fields?search=" + searchTerm + "&page=" + page + "&pageSize=" + pageSize );
+						
+		Gson gson = new Gson();
+		SearchResponse<Field> fields = gson.fromJson(response.body, SearchResponse.class);		
+
 		return fields;
 	}
 }

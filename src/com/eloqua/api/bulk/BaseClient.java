@@ -7,8 +7,4 @@ public class BaseClient extends com.eloqua.api.BaseClient {
 	public BaseClient(String site, String user, String password, String url) {
 		super(site, user, password, url);
 	}
-	
-	public ContactFieldClient ContactFieldClient() {
-		return new ContactFieldClient(this);
-	}
 }
