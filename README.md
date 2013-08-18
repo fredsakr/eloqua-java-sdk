@@ -5,10 +5,10 @@ Currently contains clients for the Bulk API.
 
 ## Bulk Client Project
 ### Create Client
-	BulkClient client = new BulkClient("site", "user", "password", "baseUrl");
+	BulkClient client = new BulkClient(site, user, password, baseUrl);
 
 ### GET (list)
-	SearchResponse<Field> fields = client.ContactFieldClient().Search("*", 1, count);	
+	SearchResponse<Field> fields = client.ContactFieldClient().Search(searchTerm, page, count);	
 
 ### Contact Export
 	Export export = new Export
