@@ -1,15 +1,32 @@
-eloqua-java-sdk
-===============
+Eloqua SDK for Java
+=================
+A software development kit for Java that helps developers build applications that integrate with Eloqua.
+Currently contains clients for the Bulk API.
 
-A software development kit to help developers extend the Eloqua platform. Initially supporting clients for Eloqua's Bulk API.
-
-## Usage
-
+## Bulk Client Project
 ### Create Client
 	BulkClient client = new BulkClient("site", "user", "password", "baseUrl");
 
 ### GET (list)
 	SearchResponse<Field> fields = client.ContactFieldClient().Search("*", 1, count);	
+
+### Contact Export
+	Export export = new Export
+	{
+		name = "sample export",
+		fields = fields,
+		filter = filter,
+		secondsToAutoDelete = 3600,
+		secondsToRetainData = 3600,
+		syncActions = new List<SyncAction>
+						{
+							new SyncAction
+								{
+									action = SyncActionType.add,
+									destinationUri = destinationUri
+								}
+						}
+	};
 	
 ## Endpoint URL
 To determine the base url, you can use the following endpoint : login.eloqua.com/id 
