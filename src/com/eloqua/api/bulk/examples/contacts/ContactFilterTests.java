@@ -1,12 +1,10 @@
-package com.eloqua.api.bulk.examples;
+package com.eloqua.api.bulk.examples.contacts;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
-
 import com.eloqua.api.bulk.BulkClient;
 import com.eloqua.api.bulk.models.ExportFilter;
-import com.eloqua.api.bulk.models.Field;
 import com.eloqua.api.bulk.models.SearchResponse;
 
 public class ContactFilterTests {
@@ -19,5 +17,4 @@ public class ContactFilterTests {
 		SearchResponse<ExportFilter> filters = client.ContactFilterClient().Search("*", 1, count);
 		assertEquals(count, filters.total);
 	}
-
 }

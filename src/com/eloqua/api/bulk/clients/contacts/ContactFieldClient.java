@@ -2,10 +2,8 @@ package com.eloqua.api.bulk.clients.contacts;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
-import com.eloqua.api.bulk.models.ContactFieldSearchResponse;
 import com.eloqua.api.bulk.models.Field;
 import com.eloqua.api.bulk.models.SearchResponse;
-import com.google.gson.Gson;
 
 public class ContactFieldClient {
 

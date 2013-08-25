@@ -20,5 +20,4 @@ public class AccountFilterClient {
 
 		return fields;
 	}
-
 }

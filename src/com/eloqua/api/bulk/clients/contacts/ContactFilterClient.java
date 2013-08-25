@@ -4,7 +4,6 @@ import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
 import com.eloqua.api.bulk.models.ExportFilter;
 import com.eloqua.api.bulk.models.SearchResponse;
-import com.google.gson.Gson;
 
 public class ContactFilterClient {
 

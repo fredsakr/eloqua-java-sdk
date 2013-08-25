@@ -1,11 +1,9 @@
-package com.eloqua.api.bulk.examples;
+package com.eloqua.api.bulk.examples.contacts;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
 import com.eloqua.api.bulk.BulkClient;
-import com.eloqua.api.bulk.models.ContactFieldSearchResponse;
 import com.eloqua.api.bulk.models.Field;
 import com.eloqua.api.bulk.models.SearchResponse;
 
