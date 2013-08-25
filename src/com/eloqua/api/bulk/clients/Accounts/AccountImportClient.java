@@ -1,7 +1,6 @@
-package com.eloqua.api.bulk.clients.Accounts;
+package com.eloqua.api.bulk.clients.accounts;
 
 import java.util.Map;
-
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
 import com.eloqua.api.bulk.models.Import;

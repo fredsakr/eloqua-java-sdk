@@ -1,7 +1,7 @@
 package com.eloqua.api.bulk;
 
-import com.eloqua.api.bulk.clients.ContactFieldClient;
-import com.eloqua.api.bulk.clients.ContactFilterClient;
+import com.eloqua.api.bulk.clients.contacts.ContactFieldClient;
+import com.eloqua.api.bulk.clients.contacts.ContactFilterClient;
 
 public class BulkClient extends BaseClient {
 

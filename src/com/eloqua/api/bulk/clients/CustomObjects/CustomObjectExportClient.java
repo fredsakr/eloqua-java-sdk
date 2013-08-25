@@ -1,4 +1,4 @@
-package com.eloqua.api.bulk.clients.CustomObjects;
+package com.eloqua.api.bulk.clients.customObjects;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;

@@ -1,4 +1,4 @@
-package com.eloqua.api.bulk.clients;
+package com.eloqua.api.bulk.clients.contacts;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
