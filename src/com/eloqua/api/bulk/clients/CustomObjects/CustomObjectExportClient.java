@@ -1,23 +1,19 @@
-package com.eloqua.api.bulk.clients;
+package com.eloqua.api.bulk.clients.CustomObjects;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
 import com.eloqua.api.bulk.models.Export;
-import com.eloqua.api.bulk.models.Field;
-import com.eloqua.api.bulk.models.SearchResponse;
 import com.eloqua.api.bulk.models.Sync;
-import com.google.gson.Gson;
 
-public class ContactExportClient {
-
+public class CustomObjectExportClient {
 	private BaseClient _client;
 	
-	public ContactExportClient(BaseClient client) {
+	public CustomObjectExportClient(BaseClient client) {
 		_client = client;
 	}
 
-	public Export CreateExport(Export export) {
-		Response response = _client.post("/contact/export", _client.Gson().toJson(export));
+	public Export CreateExport(Export export, int customObjectId) {
+		Response response = _client.post("/customObjects" + customObjectId + "/export", _client.Gson().toJson(export));
 		
 		Export updatedExport = _client.Gson().fromJson(response.body, Export.class);		
 

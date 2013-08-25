@@ -8,7 +8,7 @@ public class BulkClient extends BaseClient {
 	public BulkClient(String site, String user, String password, String url) {
 		super(site, user, password, url);
 	}
-	
+		
 	public ContactFieldClient ContactFieldClient() {
 		if (_contactFieldClient != null) {
 			_contactFieldClient = new ContactFieldClient(this);

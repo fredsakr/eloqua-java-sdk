@@ -1,23 +1,20 @@
-package com.eloqua.api.bulk.clients;
+package com.eloqua.api.bulk.clients.Accounts;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
-import com.eloqua.api.bulk.models.ContactFieldSearchResponse;
 import com.eloqua.api.bulk.models.Field;
 import com.eloqua.api.bulk.models.SearchResponse;
-import com.google.gson.Gson;
 
-public class ContactFieldClient {
-
+public class AccountFieldClient {
 	private BaseClient _client;
 	
-	public ContactFieldClient(BaseClient client) {
+	public AccountFieldClient(BaseClient client) {
 		_client = client;
 	}
 	
 	public SearchResponse<Field> Search(String searchTerm, int page, int pageSize)
 	{
-		Response response = _client.get("/contact/fields?search=" + searchTerm + "&page=" + page + "&pageSize=" + pageSize );
+		Response response = _client.get("/account/fields?search=" + searchTerm + "&page=" + page + "&pageSize=" + pageSize );
 						
 		SearchResponse<Field> fields = _client.Gson().fromJson(response.body, SearchResponse.class);		
 
