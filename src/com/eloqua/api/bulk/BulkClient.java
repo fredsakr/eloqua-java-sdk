@@ -1,12 +1,31 @@
 package com.eloqua.api.bulk;
 
+import com.eloqua.api.Response;
 import com.eloqua.api.bulk.clients.contacts.*;
 import com.eloqua.api.bulk.clients.customObjects.*;
+import com.eloqua.api.bulk.models.ExportFilter;
+import com.eloqua.api.bulk.models.SearchResponse;
+import com.eloqua.api.bulk.models.login.AccountInfo;
 
 public class BulkClient extends BaseClient {
+	
+	private String _site;
+	private String _user;
+	private String _password;
 
 	public BulkClient(String site, String user, String password, String url) {
 		super(site, user, password, url);
+		_site = site;
+		_user = user;
+		_password = password;
+	}
+	
+	public AccountInfo GetAccountInfo() {
+		BaseClient client = new BaseClient(_site, _user, _password, "https://login.eloqua.com");
+		Response response = client.get("/id");
+		
+		AccountInfo info = client.Gson().fromJson(response.body, AccountInfo.class);		
+        return info;
 	}
 		
 	public ContactFieldClient ContactFieldClient() {
