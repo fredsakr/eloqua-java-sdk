@@ -7,10 +7,8 @@ import com.eloqua.api.bulk.models.login.AccountInfo;
 public class AccountInfoTest {
 
 	@Test
-	public void GetAccountInfoTest() {
-		BulkClient client = new BulkClient("site", "user", "password", "https://secure.eloqua.com/API/Bulk/1.0");
-		
-		AccountInfo info = client.GetAccountInfo();
+	public void GetAccountInfoTest() {		
+		AccountInfo info = BulkClient.GetAccountInfo("site", "user", "password");
 		String baseUrl = info.urls.apis.rest.bulk;
 	}
 }

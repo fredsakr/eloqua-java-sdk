@@ -5,7 +5,8 @@ Currently contains clients for the Bulk API.
 
 ## Bulk Client Project
 ### Create Client
-	BulkClient client = new BulkClient(site, user, password, baseUrl);
+	AccountInfo info = BulkClient.GetAccountInfo("site", "user", "password");
+	String baseUrl = info.urls.apis.rest.bulk;
 
 ### GET (list)
 	SearchResponse<Field> fields = client.ContactFieldClient().Search(searchTerm, page, count);	
@@ -28,33 +29,8 @@ Currently contains clients for the Bulk API.
 						}
 	};
 	
-## Endpoint URL
-To determine the base url, you can use the following endpoint : login.eloqua.com/id 
-The endpoint, when called with basic authentication, will return details about the URLs for the various APIs.
-     
-```json
-{
-    "site": {
-        "id": 42,
-        "name": "SampleClient"
-    },
-    "user": {
-        "id": 314,
-        "username": "Fred Sakr",
-        "displayName": "Fred Sakr",
-        "firstName": "Fred",
-        "lastName": "Sakr",
-        "emailAddress": "fred.sakr@oracle.com"
-    },
-    "urls": {
-        "base": "https://www05.secure.eloqua.com",
-        "apis"	...
-	}
-}
-```
-
 ## License
-	Copyright [2012] [Fred Sakr]
+	Copyright [2013] [Fred Sakr]
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
 	You may obtain a copy of the License at
