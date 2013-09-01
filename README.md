@@ -6,7 +6,7 @@ Currently contains clients for the Bulk API.
 ## Bulk Client Project
 ### Create Client
 	AccountInfo info = BulkClient.GetAccountInfo("site", "user", "password");
-	String baseUrl = info.urls.apis.rest.bulk;
+	BulkClient client = new BulkClient("site", "user", "password", info.urls.apis.rest.bulk);
 
 ### GET (list)
 	SearchResponse<Field> fields = client.ContactFieldClient().Search(searchTerm, page, count);	
