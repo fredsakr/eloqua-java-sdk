@@ -2,6 +2,7 @@ package com.eloqua.api.bulk.clients.contacts;
 
 import com.eloqua.api.Response;
 import com.eloqua.api.bulk.BaseClient;
+import com.eloqua.api.bulk.models.Data;
 import com.eloqua.api.bulk.models.Export;
 import com.eloqua.api.bulk.models.Sync;
 
@@ -29,9 +30,9 @@ public class ContactExportClient {
 		return updatedSync;		
 	}
 	
-	public String GetExportData(String exportUri) {
+	public Data GetExportData(String exportUri) {
 		Response response = _client.get(exportUri + "/data");
-		
-		return response.body;
+		Data data = _client.Gson().fromJson(response.body, Data.class);
+		return data;
 	}
 }

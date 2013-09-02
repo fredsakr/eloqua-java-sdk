@@ -1,5 +1,7 @@
 package com.eloqua.api;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.net.URL;
 import java.net.HttpURLConnection;
 import java.io.InputStream;
@@ -47,8 +49,10 @@ public class BaseClient {
 		try
 		{
 			URL url = new URL(_baseUrl + uri);
-			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
+			Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8888));
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			
 			conn.setInstanceFollowRedirects(false);
 			conn.setRequestMethod(method.toString());
 			conn.setRequestProperty("Content-Type", "application/json");
